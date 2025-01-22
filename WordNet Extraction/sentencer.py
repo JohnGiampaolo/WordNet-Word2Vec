@@ -20,7 +20,7 @@ def extractor(dir_path):
                         if line[0] != "(":
                             matches = reg_parentheses(line)
                             for match in matches:
-                                regex = re.compile('[,\.!?;""<>\(\)`]')
+                                regex = re.compile(r'[,\.\!?;""<>\(\)`]')
                                 match = regex.sub('', match)
                                 if ' ' in match:
                                     match_dict = {}
@@ -29,7 +29,7 @@ def extractor(dir_path):
                         
         # Having grouped all definitions into a list of dictionaries
         # Write each one to CSV file
-        with open("test.csv", "w", newline='') as csvfile:
+        with open("definitions.csv", "w", newline='') as csvfile:
             fieldnames=["definition"]
             writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
             writer.writerows(definitions)
