@@ -1,0 +1,1 @@
+Model Training Proces guided by tutorial found on https://www.kaggle.com/code/pierremegret/gensim-word2vec-tutorial/notebook
